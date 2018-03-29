@@ -14,7 +14,7 @@ class CreateEmailsTable extends Migration
     public function up()
     {
 
-        Schema::create('Emails', function (Blueprint $table) {
+        Schema::create('emails', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->string('email')->unique();

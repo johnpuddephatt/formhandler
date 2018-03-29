@@ -13,16 +13,13 @@ class CreateSubmissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Submissions', function (Blueprint $table) {
+        Schema::create('submissions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('_after')->nullable();
             $table->text('name')->nullable();
             $table->string('email')->nullable();
             $table->string('user_id')->nullable();
             $table->string('_subject')->nullable();
-            $table->boolean('cc')->nullable();
-            $table->boolean('bcc')->nullable();
-            $table->boolean('message')->nullable();
             $table->string('form_data_raw')->nullable();
             $table->timestamps();
         });
