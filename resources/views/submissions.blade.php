@@ -5,17 +5,22 @@
 
     <h3>Submissions</h3>
 
-    <table class="table table-striped">
-      <thead>
-      <tr><th>Date</th><th>Name</th><th>Subject</th><th>Email</th><th>Raw</th></tr>
-      </thead>
-      <tbody>
-        @foreach ($submissions as $submission)
-          <tr><td>{{ $submission->created_at }}</td><td>{{ $submission->name }}</td><td>{{ $submission->_subject }}</td><td>{{ $submission->email }}</td><td><a href="#" data-toggle="modal" data-target="#modal-{{$submission->id}}">View raw</a></td></tr>
-        @endforeach
-      </tbody>
-    </table>
-
+    @if($submissions->count())
+      <table class="table table-striped">
+        <thead>
+        <tr><th>Date</th><th>Name</th><th>Subject</th><th>Email</th><th>Raw</th></tr>
+        </thead>
+        <tbody>
+          @foreach ($submissions as $submission)
+            <tr><td>{{ $submission->created_at }}</td><td>{{ $submission->name }}</td><td>{{ $submission->_subject }}</td><td>{{ $submission->email }}</td><td><a href="#" data-toggle="modal" data-target="#modal-{{$submission->id}}">View raw</a></td></tr>
+          @endforeach
+        </tbody>
+      </table>
+    @else
+      <div class="alert alert-info">
+        Nothing to show you
+      </div>
+    @endif
     {{ $submissions->links() }}
 
     @foreach ($submissions as $submission)
