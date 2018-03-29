@@ -43,8 +43,11 @@ class SubmissionController extends Controller
     \Mail::to($recipient->email)->send(new NewSubmission($formData));
 
     // Save submission
-    $submission = new Submission ($formData);
+    $submission = new Submission ();
     $submission->form_data_raw = json_encode($formData);
+    $submission->name = $request->name;
+    $submission->_subject = $request->_subject;
+    $submission->email = $request->email;
     $submission->user_id = $recipient_id;
 
     $submission->save();
