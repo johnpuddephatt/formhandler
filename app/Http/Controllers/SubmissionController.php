@@ -40,7 +40,7 @@ class SubmissionController extends Controller
     }
 
     // Send email
-    \Mail::to($recipient->email)->from($request->_replyto)->send(new NewSubmission($formData));
+    \Mail::to($recipient->email)->send(new NewSubmission($formData));
 
     // Save submission
     $submission = new Submission ();

@@ -31,6 +31,7 @@ class NewSubmission extends Mailable
     public function build()
     {
       return $this->subject($this->formData['_subject'])
+                  ->from($this->formData['_replyto'])
                   ->markdown('emails.email-submission');
     }
 }
