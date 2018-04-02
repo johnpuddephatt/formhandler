@@ -16,12 +16,14 @@
           @endforeach
         </tbody>
       </table>
+
+      {{ $submissions->links() }}
+
     @else
       <div class="alert alert-info">
-        Nothing to show you
+        No submissions to show you
       </div>
     @endif
-    {{ $submissions->links() }}
 
     @foreach ($submissions as $submission)
       <div id="modal-{{$submission->id}}" class="modal" tabindex="-1" role="dialog">

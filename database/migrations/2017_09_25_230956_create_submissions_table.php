@@ -20,7 +20,7 @@ class CreateSubmissionsTable extends Migration
             $table->string('email')->nullable();
             $table->string('user_id')->nullable();
             $table->string('_subject')->nullable();
-            $table->string('form_data_raw')->nullable();
+            $table->text('form_data_raw')->nullable();
             $table->timestamps();
         });
     }
