@@ -48,8 +48,10 @@ class SubmissionController extends Controller
       abort(404);
     }
 
+    $request->_replyto ? $replyto = $request->_replyto : $replyto = env('MAIL_FROM_ADDRESS');
+
     // Send email
-    \Mail::to($recipient->email)->send(new NewSubmission($formData));
+    \Mail::to($recipient->email)->send(new NewSubmission($formData,$replyto));
 
     // Save submission
     $submission = new Submission ();
