@@ -39,6 +39,10 @@ class SubmissionController extends Controller
       }
     }
 
+    if($submission->_honeypot != '') {
+      abort(404);
+    }
+
     // Send email
     \Mail::to($recipient->email)->send(new NewSubmission($formData));
 
