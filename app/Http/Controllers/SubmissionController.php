@@ -39,7 +39,7 @@ class SubmissionController extends Controller
       }
     }
 
-    if($submission->_honeypot) {
+    if($request->_honeypot) {
       abort(404);
     }
 
