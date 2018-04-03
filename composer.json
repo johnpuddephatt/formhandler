@@ -11,7 +11,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "vinkla/hashids": "^3.3"
+        "vinkla/hashids": "^3.3",
+        "buzz/laravel-google-captcha": "2.*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

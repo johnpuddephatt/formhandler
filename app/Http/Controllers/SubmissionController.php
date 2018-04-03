@@ -24,6 +24,11 @@ class SubmissionController extends Controller
 
   public function catch(Request $request, $recipienthash) {
 
+    $validatedData = $request->validate([
+      'g-recaptcha-response' => 'required|captcha'
+    ]);
+
+
     if(!is_numeric (Hashids::decode($recipienthash)[0])) {
       abort(404);
     }

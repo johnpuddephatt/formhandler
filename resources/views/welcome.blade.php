@@ -29,6 +29,9 @@
       <label for="message">Body</label>
       <textarea class="form-control" name="message"></textarea>
     </div>
+
+    {!! Captcha::display() !!}
+
     <input class="btn btn-primary" type="submit" value="Send" name="submit">
 
   </form>
