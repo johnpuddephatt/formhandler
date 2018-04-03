@@ -18,9 +18,10 @@ class NewSubmission extends Mailable
      *
      * @return void
      */
-    public function __construct($formData)
+    public function __construct($formData,$replyto)
     {
         $this->formData = $formData;
+        $this->replyto = $replyto;
     }
 
     /**
@@ -31,7 +32,7 @@ class NewSubmission extends Mailable
     public function build()
     {
       return $this->subject($this->formData['_subject'])
-                  ->from($this->formData['_replyto'])
+                  ->from($this->replyto)
                   ->markdown('emails.email-submission');
     }
 }
