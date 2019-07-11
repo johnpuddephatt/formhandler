@@ -12,7 +12,13 @@
         </thead>
         <tbody>
           @foreach ($submissions as $submission)
-            <tr><td>{{ $submission->created_at }}</td><td>{{ $submission->name }}</td><td>{{ $submission->_subject }}</td><td>{{ $submission->email }}</td><td><a href="#" data-toggle="modal" data-target="#modal-{{$submission->id}}">View raw</a></td></tr>
+            <tr>
+              <td>{{ $submission->created_at }}</td>
+              <td>{{ $submission->name }}</td>
+              <td>{{ $submission->_subject }}</td>
+              <td>{{ $submission->email }}</td>
+              <td><a href="/submissions/{{ Hashids::encode( $submission->id ) }}">View submission</a></td>
+            </tr>
           @endforeach
         </tbody>
       </table>
@@ -25,7 +31,7 @@
       </div>
     @endif
 
-    @foreach ($submissions as $submission)
+    {{-- @foreach ($submissions as $submission)
       <div id="modal-{{$submission->id}}" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -44,6 +50,6 @@
           </div>
         </div>
       </div>
-    @endforeach
+    @endforeach --}}
   </div>
 @endsection

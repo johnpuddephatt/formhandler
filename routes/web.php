@@ -22,5 +22,6 @@ Route::post('/admin/users/add', 'UserController@store')->middleware('auth');
 
 Route::get('/admin/users/{recipienthash}', 'SubmissionController@index')->middleware('auth');
 Route::post('/{recipienthash}', 'SubmissionController@catch');
+Route::get('/submission/{submissionhash}', 'SubmissionController@single')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -22,6 +22,15 @@ class SubmissionController extends Controller
     return view('submissions', compact('submissions'));
   }
 
+  public function single($submissionhash) {
+    if(!is_numeric (Hashids::decode($submissionhash)[0])) {
+      abort(404);
+    }
+    $submission_id = Hashids::decode($submissionhash)[0];
+    $submission = Submission::find($submission_id);
+    return view('submission', compact('submission'));
+  }
+
   public function catch(Request $request, $recipienthash) {
 
     $validatedData = $request->validate([
