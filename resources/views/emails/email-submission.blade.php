@@ -16,7 +16,6 @@
 
 @foreach ($formData as $key => $value)
 **{{ $key }}:** {{ $value }}
-
 @endforeach
 
 @component('mail::panel')

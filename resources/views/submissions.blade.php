@@ -17,7 +17,7 @@
               <td>{{ $submission->name }}</td>
               <td>{{ $submission->_subject }}</td>
               <td>{{ $submission->email }}</td>
-              <td><a href="/submissions/{{ Hashids::encode( $submission->id ) }}">View submission</a></td>
+              <td><a href="/submission/{{ Hashids::encode( $submission->id ) }}">View submission</a></td>
             </tr>
           @endforeach
         </tbody>
