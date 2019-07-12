@@ -19,7 +19,7 @@
           </table>
         </fieldset>
       @else
-        <strong>{{ $key }}:</strong> {{ is_array($value) ? implode($value,', ') : $value }}
+        <p><strong>{{ $key }}:</strong> {{ is_array($value) ? implode($value,', ') : $value }}</p>
       @endif
     @endforeach
   </div>
