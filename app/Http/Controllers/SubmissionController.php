@@ -28,7 +28,6 @@ class SubmissionController extends Controller
     }
     $submission_id = Hashids::decode($submissionhash)[0];
     $submission = Submission::find($submission_id);
-    unset($submission['g-recaptcha-response']);
 
     return view('submission', compact('submission'));
   }
