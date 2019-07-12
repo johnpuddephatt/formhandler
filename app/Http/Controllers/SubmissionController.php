@@ -37,7 +37,6 @@ class SubmissionController extends Controller
       'g-recaptcha-response' => 'required|captcha'
     ]);
 
-
     if(!is_numeric (Hashids::decode($recipienthash)[0])) {
       abort(404);
     }
@@ -47,6 +46,8 @@ class SubmissionController extends Controller
       abort(404);
     }
     $formData = $request->all();
+
+    return $formData;
     foreach ($formData as $key => $value) {
       if (is_array($value)) {
           $formData[$key] = trim(implode($value, ", "), ", ");
