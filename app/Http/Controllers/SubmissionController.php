@@ -47,11 +47,11 @@ class SubmissionController extends Controller
     }
     $formData = $request->all();
 
-    foreach ($formData as $key => $value) {
-      if (is_array($value)) {
-          $formData[$key] = trim(implode($value, ", "), ", ");
-      }
-    }
+    // foreach ($formData as $key => $value) {
+    //   if (is_array($value)) {
+    //       $formData[$key] = trim(implode($value, ", "), ", ");
+    //   }
+    // }
 
     if($request->_honey) {
       abort(404);
