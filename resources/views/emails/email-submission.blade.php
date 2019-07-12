@@ -16,14 +16,17 @@
 # New message received
 
 @foreach ($formData as $key => $value)
-  @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
-    ## {{ $key }}
-    @foreach ($value as $key2 => $value2)
-      **{{ $key2 }}:** {{ is_array($value2) ? implode($value2,', ') : $value2 }}
-    @endforeach
-  @else
-    **{{ $key }}:** {{ is_array($value) ? implode($value,', ') : $value }}
-  @endif
+@if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
+## {{ $key }}
+
+@foreach ($value as $key2 => $value2)
+**{{ $key2 }}:** {{ is_array($value2) ? implode($value2,', ') : $value2 }}
+
+@endforeach
+@else
+**{{ $key }}:** {{ is_array($value) ? implode($value,', ') : $value }}
+
+@endif
 
 @endforeach
 
