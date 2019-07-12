@@ -8,7 +8,7 @@
     @foreach (json_decode($submission->form_data_raw, true) as $key => $value)
       @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
         <fieldset class="card">
-          <h3 class="card-header">{{ $key }}</h3>
+          <div class="card-header">{{ ucfirst(str_replace('fieldset_','',$key)) }}</div>
           <table class="table table-striped">
             @foreach ($value as $key2 => $value2)
               <tr><td><strong>{{ $key2 }}</strong></td><td>{{ is_array($value2) ? implode($value2,', ') : $value2 }}</td></tr>
