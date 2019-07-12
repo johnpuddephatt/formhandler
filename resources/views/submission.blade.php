@@ -6,7 +6,7 @@
     <h2>Submission</h2>
     {{-- @php print("<pre>".print_r(json_decode($submission->form_data_raw),true)."</pre>") @endphp --}}
     @php $fields = json_decode($submission->form_data_raw, true) @endphp
-    @php unset($submission['g-recaptcha-response']) @endphp
+    @php unset($fields['g-recaptcha-response']) @endphp
 
     @foreach ($fields as $key => $value)
       @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
