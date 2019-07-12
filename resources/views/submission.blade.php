@@ -5,7 +5,7 @@
 
     <h2>Submission</h2>
     {{-- @php print("<pre>".print_r(json_decode($submission->form_data_raw),true)."</pre>") @endphp --}}
-    @foreach ($submission->form_data_raw as $key => $value)
+    @foreach ((json_decode($submission->form_data_raw),true) as $key => $value)
       @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
         <h3>{{ $key }}</h3>
         <table>
