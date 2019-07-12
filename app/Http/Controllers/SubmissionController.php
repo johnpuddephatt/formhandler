@@ -47,7 +47,6 @@ class SubmissionController extends Controller
     }
     $formData = $request->all();
 
-    return $formData;
     foreach ($formData as $key => $value) {
       if (is_array($value)) {
           $formData[$key] = trim(implode($value, ", "), ", ");
