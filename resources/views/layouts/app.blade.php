@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" >
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand" href="{{ url('/') }}">
