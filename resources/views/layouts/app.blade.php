@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" >
   </head>
   <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark">
       <div class="container">
         <!-- Branding Image -->
         <a class="navbar-brand" href="{{ url('/') }}">
