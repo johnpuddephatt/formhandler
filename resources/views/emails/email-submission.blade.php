@@ -1,5 +1,5 @@
 @php
-  $message = $formData['message'];
+  $message = $formData['message'] ?? '';
   unset($formData['_subject']);
   unset($formData['message']);
   unset($formData['_redirect']);
