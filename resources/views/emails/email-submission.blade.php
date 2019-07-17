@@ -9,6 +9,7 @@
   unset($formData['submit']);
   unset($formData['cc']);
   unset($formData['g-recaptcha-response']);
+  unset($formData['tabs']);
 @endphp
 
 @component('mail::message')

@@ -7,6 +7,7 @@
     {{-- @php print("<pre>".print_r(json_decode($submission->form_data_raw),true)."</pre>") @endphp --}}
     @php $fields = json_decode($submission->form_data_raw, true) @endphp
     @php unset($fields['g-recaptcha-response']) @endphp
+    @php unset($fields['tabs']) @endphp
 
     @foreach ($fields as $key => $value)
       @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
@@ -14,7 +15,17 @@
           <div class="card-header">{{ ucfirst(str_replace('fieldset_','',$key)) }}</div>
           <table class="table table-striped mb-0">
             @foreach ($value as $key2 => $value2)
-              <tr><td><strong>{{ $key2 }}</strong></td><td>{{ is_array($value2) ? implode($value2,', ') : $value2 }}</td></tr>
+              <tr>
+                <td><strong>{{ $key2 }}</strong></td>
+                <td>
+                  @if(is_array($value2))
+                    @foreach ($value2 as $key3 => $value3)
+                      <strong>{{$key3}}: {{$value3}}<br/>
+                    @endforeach
+                  @else
+                    {{ $value2 }}
+                  @endif
+              </tr>
             @endforeach
           </table>
         </fieldset>
