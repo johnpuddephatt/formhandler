@@ -33,7 +33,7 @@
           </table>
         </fieldset>
       @else
-        <p><strong>{{ $key }}:</strong> {{ is_array($value) ? implode($value,', ') : $value }}</p>
+        <p><strong>{{ucfirst(str_replace('_','',$key))}}:</strong> {{ is_array($value) ? implode($value,', ') : $value }}</p>
       @endif
     @endforeach
   </div>
