@@ -17,12 +17,12 @@
             @foreach ($value as $key2 => $value2)
               <tr>
                 <td>
-                  <strong>{{ $key2 }}</strong>
+                  <strong>{{ucfirst(str_replace('_','',$key2))}}</strong>
                 </td>
                 <td>
                   @if(is_array($value2))
                     @foreach ($value2 as $key3 => $value3)
-                      <strong>{{$key3}}:</strong> {{$value3}}<br/>
+                      <strong>{{ucfirst(str_replace('_','',$key3))}}:</strong> {{$value3 }}<br/>
                     @endforeach
                   @else
                     {{ $value2 }}
