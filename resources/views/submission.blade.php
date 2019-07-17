@@ -12,7 +12,7 @@
     @foreach ($fields as $key => $value)
       @if (is_array($value) && (substr($key, 0, 9) === 'fieldset_'))
         <fieldset class="card mt-4 mb-4">
-          <div class="card-header">{{ ucfirst(str_replace('_','',str_replace('fieldset_','',$key))) }}</div>
+          <div class="card-header">{{ ucfirst(str_replace('_',' ',str_replace('fieldset_','',$key))) }}</div>
           <table class="table table-striped mb-0">
             @foreach ($value as $key2 => $value2)
               <tr>
