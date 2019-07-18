@@ -22,14 +22,15 @@
 ## {{ ucfirst(str_replace('_',' ',str_replace('fieldset_','',$key))) }}
 
 @foreach ($value as $key2 => $value2)
-**{{ $key2 }}:**
+**{{ ucfirst(str_replace('_',' ',$key2)) }}:**
 @if(is_array($value2))
 @foreach ($value2 as $key3 => $value3)
 **{{ucfirst(str_replace('_',' ',$key3))}}:** {{$value3 }}
 
 @endforeach
 @else
-  {{ $value2 }}
+{{ $value2 }}
+  
 @endif
 @endforeach
 @else
