@@ -73,8 +73,8 @@ class SubmissionController extends Controller
 
     $submission->save();
 
-    return $request->ajax();
-    
+    return $request->ajax() ? 'true' : 'false';
+
     if($request->ajax()){
       return ['success' => true, 'message' => 'Application successfully received.'];
     }
