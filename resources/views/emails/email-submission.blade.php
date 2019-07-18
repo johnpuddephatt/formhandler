@@ -25,12 +25,10 @@
 **{{ ucfirst(str_replace('_',' ',$key2)) }}:**
 @if(is_array($value2))
 @foreach ($value2 as $key3 => $value3)
-**{{ucfirst(str_replace('_',' ',$key3))}}:** {{$value3 }}
-
+**{{ucfirst(str_replace('_',' ',$key3))}}:** {{$value3 }}<br>
 @endforeach
 @else
-{{ $value2 }}
-  
+{{ $value2 }}<br>
 @endif
 @endforeach
 @else
