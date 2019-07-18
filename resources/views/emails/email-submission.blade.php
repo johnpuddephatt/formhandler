@@ -27,6 +27,7 @@
 @foreach ($value2 as $key3 => $value3)
 **{{ucfirst(str_replace('_',' ',$key3))}}:** {{$value3 }}<br>
 @endforeach
+
 @else
 {{ $value2 }}<br>
 @endif

@@ -59,7 +59,7 @@ class SubmissionController extends Controller
     }
 
     $replyto = $request->_replyto ?? env('MAIL_FROM_ADDRESS');
-    
+
     // Send email
     \Mail::to($recipient->email)->send(new NewSubmission($formData,$replyto));
 
@@ -73,12 +73,16 @@ class SubmissionController extends Controller
 
     $submission->save();
 
-
-    if(!empty($formData['_redirect'])) {
-      return redirect($formData['_redirect']);
+    if($request->ajax()){
+      return ['success' => true, 'message' => 'Application successfully received.'];
     }
     else {
-      return view('sent', compact('formData'));
+      if(!empty($formData['_redirect'])) {
+        return redirect($formData['_redirect']);
+      }
+      else {
+        return view('sent', compact('formData'));
+      }
     }
   }
 }
