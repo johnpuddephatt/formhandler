@@ -73,7 +73,7 @@ class SubmissionController extends Controller
 
     $submission->save();
 
-    if(Request::wantsJson()){
+    if($request->wantsJson()){
       return ['success' => true, 'message' => 'Application successfully received.'];
     }
     else {
