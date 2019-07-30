@@ -74,7 +74,7 @@ class SubmissionController extends Controller
     $submission->save();
 
     if($request->wantsJson()){
-      return ['success' => true, 'message' => 'Application successfully received.'];
+      return ['success' => true, 'message' => 'Success.'];
     }
     else {
       if(!empty($formData['_redirect'])) {

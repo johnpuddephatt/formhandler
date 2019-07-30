@@ -33,7 +33,7 @@
 @endif
 @endforeach
 @else
-**{{ucfirst(str_replace('_',' ',$key2))}}:** {{ is_array($value) ? implode($value,', ') : $value }}
+**{{ucfirst(str_replace('_',' ',$key))}}:** {{ is_array($value) ? implode($value,', ') : $value }}
 
 @endif
 @endforeach
